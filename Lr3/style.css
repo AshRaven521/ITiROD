@@ -1,0 +1,29 @@
+.search{
+    margin: auto;
+}
+
+.main {
+    width:100%;
+}
+.left {
+    float:left; 
+    width:20%;
+}
+.right {
+    float:right;
+    width:80%;
+}
+.bottom {
+    float:left;
+    width:100%
+}
+.map-search{
+    width:100%;
+    height:400px;
+}
+
+.link{
+    text-decoration: none;
+    color: coral;
+    
+}
