@@ -1,3 +1,10 @@
+body{
+    background-color: #607c9c;
+    color: #ebe9dc;
+    margin: 0 auto;
+    font-size: x-large;
+}
+
 .search{
     margin: auto;
 }
@@ -24,6 +31,27 @@
 
 .link{
     text-decoration: none;
-    color: coral;
+    color: #ebe9dc;
     
+}
+
+.head{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size:x-large;
+    background-color: #181f41;
+}
+.history-button{
+    color: #ebe9dc;
+    text-decoration: none;
+    border: 2px solid;
+    padding: 4px; 
+}
+
+.enter-button{
+    color: #ebe9dc;
+    text-decoration: none;
+    border: 2px solid;
+    padding: 4px;
 }
