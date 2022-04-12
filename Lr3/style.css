@@ -20,9 +20,9 @@
 body{
     background-color: var(--main-color);
     color: var(--text-color);
-    margin: 0;
+    margin: 0 auto;
     font-size: 16px;
-    height: 100%;
+    height: 100vh;
 }
 
 .wrapper{
@@ -47,6 +47,7 @@ body{
     width: 100%;
     height: 65px;
     font-size: 20px;
+    margin-top: auto;
 
 }
 
@@ -79,6 +80,19 @@ header .container{
     flex-direction: column;
     align-items: center;
     width: 20%;
+}
+
+.search-form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.search-button{
+    background-color: #181f41;
+    color: #ebe9dc;
+    border: none;
+    font-size: 16px;
 }
 
 .map-search{

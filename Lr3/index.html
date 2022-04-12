@@ -14,7 +14,7 @@
                 <img src="./Assets/Images/logo.png" alt="Logo">
                 <span>Тех. поддержка: aviakolhoz@mail.com</span>
                 <span> +375447322813</span>
-                <a href="#" class="history-button">История поиска</a>
+                <a href="./Search_history/history_window.html" class="history-button">История поиска</a>
                 <div class="buttons">
                     <a href="#" class="enter-button">Зарегестрироваться</a>
                     <a href="#" class="enter-button">Войти</a>
@@ -26,7 +26,7 @@
                 <div class="search-group">
                     <section class="search">
                         <h2>Поиск</h2>
-                        <form>
+                        <form class="search-form">
                             <div class="departure-point">
                                 <label>Место отправления</label>
                                 <input class="departure-input">
@@ -41,9 +41,11 @@
                                     Код
                                 </span>
                             </div>
-                            <input type="date"><br>
-                            <input type="date"><br>
-                            <input type="button" value="Поиск">
+                            <label>Дата отправления:</label>
+                            <input class="departure-input" type="date">
+                            <label>Дата прибытия: </label>
+                            <input class="departure-input" type="date">
+                            <input type="button" class="search-button" value="Поиск">
                         </form>
                     </section>
                     <section class="map-search">
