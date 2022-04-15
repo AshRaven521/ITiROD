@@ -22,7 +22,7 @@ body{
     color: var(--text-color);
     margin: 0 auto;
     font-size: 16px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .wrapper{
@@ -120,7 +120,6 @@ header .container{
 .link{
     text-decoration: none;
     color: var(--text-color);
-    
 }
 
 .history-button{
@@ -183,4 +182,85 @@ hr {
     border: 2px solid var(--secondary-color);
     width: 150px;
     height: 20px;
+}
+
+.ticket{
+    border: 2px solid var(--secondary-color);
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    width: 800px;
+    font-size: large;
+}
+
+.price{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+}
+
+.departure{
+    display: flex;
+    flex-direction: column;
+}
+.arrival{
+    display: flex;
+    flex-direction: column;
+}
+.arrow-location{
+    display: flex;
+    justify-content: center;
+}
+.arrow-image:after {
+    content: "";
+    display: inline-block !important;
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--secondary-color);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    vertical-align: middle;
+    
+}
+  
+.arrow-image:before {
+    width: 300px;
+    height: 2px;
+    background: var(--secondary-color);
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.direction{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+}
+
+.line{
+    border-left: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    height: 100px;
+}
+
+.tickets-list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.departure-info-container{
+    display: flex;
+    flex-direction: column;
+}
+.departure-info-link{
+    border: 2px solid var(--text-color);
+    text-align: center;
 }
