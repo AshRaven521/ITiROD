@@ -26,12 +26,8 @@ body{
     flex-direction: column;
     align-items: center;
     height: 50%;
-    /* height: fit-content; */
     overflow-y: auto;
-    /* height: 95vh;
-    width: 60%; */
     margin: auto;
-    /* background-color: #181f41; */
     background-color: #607c9c;
 }
 
@@ -53,6 +49,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-left: 10%;
 }
 
 .history-link{
@@ -63,7 +60,7 @@ body{
 }
 
 .history-link:hover{
-    color: aqua;
+    color: #181f41;
 }
 
 h2{
