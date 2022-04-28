@@ -1,0 +1,171 @@
+@media screen and (max-width: 575px) {
+  .search-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-hr {
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid var(--text-color);
+  }
+
+  .search {
+    justify-content: center;
+  }
+
+  .ticket {
+    width: 100%;
+    font-size: small;
+    height: 100%;
+  }
+
+  .tickets-list {
+    align-items: center;
+  }
+
+  .departure-info-link {
+    width: 30%;
+    display: none;
+  }
+
+  .mobile-departure-info-link {
+    display: block;
+    padding: 3px;
+    letter-spacing: 1px;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .arrow-image {
+    align-self: center;
+    width: 100%;
+  }
+
+  .enter-button {
+    display: none;
+  }
+
+  ul {
+    padding: 0px;
+  }
+
+  .modal-button {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+    align-self: center;
+    width: 40px;
+    height: 35px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+
+  .menu-button span {
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--mobile-menu-color);
+    transition: all 0.5s;
+    z-index: 100;
+  }
+
+  .menu-button span:nth-of-type(2) {
+    top: calc(50% - 10px);
+  }
+  .menu-button span:nth-of-type(3) {
+    top: calc(50% + 10px);
+  }
+
+  /* Гамбургер -> крестик */
+  .menu-button.active span:nth-of-type(1) {
+    display: none;
+  }
+  .menu-button.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+  }
+  .menu-button.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+  }
+
+  .mobile-menu-container-active {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.8);
+    right: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .mobile-menu {
+    position: absolute;
+    display: none;
+    padding-top: 10px;
+    top: 0;
+    height: 100vh;
+    width: 60%;
+    right: 0;
+    border-left: 2px solid #363940;
+    transition: all 0.4s ease;
+  }
+
+  .mobile-menu-active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menu-button.active {
+    position: fixed;
+    right: 12px;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    gap: 10px;
+  }
+
+  .tech-support {
+    display: none;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mobile-modal-button {
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid;
+    padding: 4px;
+    width: 90%;
+  }
+
+  .search-group {
+    gap: 20px;
+  }
+
+  .tech-support-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+}
