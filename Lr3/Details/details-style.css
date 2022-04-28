@@ -10,6 +10,12 @@ h1{
     color: var(--text-color);
 }
 
+.wrapper-detail{
+    height: 50%;
+    overflow-y: auto;
+    margin: auto;
+}
+
 @font-face {
     font-family: "Open Sans"; 
     src: url("../Assets/Fonts/OpenSans-Regular.ttf") format("truetype"); 
@@ -28,5 +34,5 @@ body{
 
 .detail-image{
     border: 2px solid var(--secondary-color);
-    width: 700px;
+    width: 100%;
 }
