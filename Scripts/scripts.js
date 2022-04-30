@@ -8,11 +8,13 @@ menuButton.addEventListener("click", () => {
   mobileMenu.classList.toggle("mobile-menu-active");
 });
 
+
+
 const todayDate = new Date().toISOString().split("T")[0];
-const departureDate = document.getElementById("departure_date");
+const departureDate = document.getElementById("departure-date");
 departureDate.setAttribute("min", todayDate);
 
-const arrivalDate = document.getElementById("arrival_date");
+const arrivalDate = document.getElementById("arrival-date");
 arrivalDate.setAttribute("min", todayDate);
 
 departureDate.onchange = ({ target: { value } }) => {
