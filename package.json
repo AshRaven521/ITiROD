@@ -1,0 +1,31 @@
+{
+  "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "firebase": "^9.7.0",
+    "html-webpack-plugin": "^5.5.0"
+  },
+  "name": "lr4",
+  "version": "1.0.0",
+  "description": "ITiROD labs",
+  "main": "./src/app.js",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-withimg-loader": "^0.1.16",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "js",
+    "labs"
+  ],
+  "author": "Vanya",
+  "license": "ISC"
+}
