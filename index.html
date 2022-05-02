@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
+    <link href="./modal-window.css" rel="stylesheet" />
+    <link href="./Details/details-style.css" rel="stylesheet" />
+    <link href="./Login-register/window-style.css" rel="stylesheet" />
+    <link href="./Search_history/history_style.css" rel="stylesheet" />
+    <link href="./mobile-style.css" rel="stylesheet" />
+    <title>AviaKolhoz</title>
+  </head>
+  <body>
+    <div class="wrapper-main">
+      <header class="header">
+        <div class="container">
+          <img src="./Assets/Images/logo.png" alt="Logo" />
+          <span class="tech-support">Тех. поддержка: aviakolhoz@mail.com</span>
+          <span class="tech-support"> +375447322813</span>
+          <a href="#" class="modal-button open-modal-button" data-modal="3"
+            >История поиска</a
+          >
+          <div class="buttons">
+            <a href="#" class="modal-button open-modal-button" data-modal="1">Зарегестрироваться</a>
+            <a href="#" class="modal-button open-modal-button" data-modal="2">Войти</a>
+          </div>
+          <div class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container">
+          <div class="mobile-menu-container">
+            <aside class="mobile-menu">
+              <div class="buttons">
+                <hr class="mobile-hr" />
+                <a href="#" class="mobile-modal-button open-modal-button" data-modal="1">Зарегестрироваться</a>
+                <a href="#" class="mobile-modal-button open-modal-button" data-modal="2">Войти</a>
+                <a href="#" class="mobile-modal-button open-modal-button" data-modal="3">История поиска</a>
+                
+              </div>
+              <hr class="mobile-hr" />
+              <div class="tech-support-info">
+                <span class="mobile-tech-support">Тех. поддержка: aviakolhoz@mail.com</span>
+                <span class="mobile-tech-support"> +375447322813</span>
+              </div>
+            </aside>
+          </div>
+          <div class="search-group">
+            <section class="search">
+              <h2>Поиск</h2>
+              <form class="search-form">
+                <div class="search-form__field">
+                  <label for="departure-input">Место отправления:</label>
+                  <div class="search-form__input">
+                    <input class="search-form__departure-input" id="departure-input"/>
+                    <span class="search-form__departure-code">Код</span>
+                  </div>
+                </div>
+                <div class="search-form__field">
+                  <label for="arrival-input">Место прибытия:</label>
+                  <div class="search-form__input">
+                    <input class="search-form__arrival-input" id="arrival-input"/>
+                    <span class="search-form__arrival-code">Код</span>
+                  </div>
+                </div>
+                <div class="search-form__field">
+                  <label for="departure-date">Дата отправления:</label>
+                  <input type="date" id="departure-date" />
+                </div>
+                <div class="search-form__field">
+                  <label for="arrival-date">Дата прибытия: </label>
+                  <input type="date" id="arrival-date" />
+                </div>
+                <input type="button" class="search-button" value="Поиск" />
+              </form>
+            </section>
+            <section class="map-search">
+              <h2>Карта поиска</h2>
+              <div class="map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.0892940111835!2d27.592458115628546!3d53.91238913986242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfaf1d38974b%3A0x3d097c7a85e0db13!2z0JHQk9Cj0JjQoCwg0LrQvtGA0L_Rg9GBIOKEliA0!5e0!3m2!1sru!2sby!4v1647969009837!5m2!1sru!2sby"
+                  width="100%"
+                  height="400"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </section>
+          </div>
+          <hr class="search-hr" />
+          <section class="search-result">
+            <h2>Результаты поиска</h2>
+            <ul class="tickets-list">
+              <li class="ticket">
+                <div class="price">
+                  <span>Цена</span>
+                  <span>2384Br</span>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="direction">
+                  <div class="departure">
+                    <span>Минск</span>
+                    <span>12:55</span>
+                    <span>24.03.2022</span>
+                  </div>
+
+                  <div class="departure-info-container">
+                    <span class="arrow-image"></span>
+                    <a
+                      href="#"
+                      class="departure-info-link open-modal-button"
+                      data-modal="4">
+                      Подробнее о месте прибытия
+                    </a>
+                    <a
+                      href="#"
+                      class="mobile-departure-info-link open-modal-button"
+                      data-modal="4">
+                      Подробнее
+                    </a>
+                  </div>
+
+                  <div class="arrival">
+                    <span>Брюссель</span>
+                    <span>10:30</span>
+                    <span>25.03.2022</span>
+                  </div>
+                </div>
+              </li>
+
+              <li class="ticket">
+                <div class="price">
+                  <span>Цена</span>
+                  <span>2783Br</span>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="direction">
+                  <div class="departure">
+                    <span>Минск</span>
+                    <span>21:10</span>
+                    <span>24.03.2022</span>
+                  </div>
+                  <div class="departure-info-container">
+                    <span class="arrow-image"></span>
+                    <a
+                      href="#"
+                      class="departure-info-link open-modal-button"
+                      data-modal="4">
+                      Подробнее о месте прибытия</a>
+                    <a
+                      href="#"
+                      class="mobile-departure-info-link open-modal-button"
+                      data-modal="4">Подробнее</a
+                    >
+                  </div>
+
+                  <div class="arrival">
+                    <span>Брюссель</span>
+                    <span>13:20</span>
+                    <span>25.03.2022</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <span>© 2022</span>
+        <a class="link" href="https://github.com/AshRaven521/ITiROD">GitHub</a>
+        <a class="link" href="https://t-do.ru/Cherrduck">Telegram</a>
+      </footer>
+
+      <!-- Для модальных окон -->
+      <!-- Окно регистрации -->
+      <div class="modal-container">
+
+        <div class="login modal" data-modal="1" id="modal-register-window">
+          <label class="modal-label" for="name-input">Имя</label>
+          <input class="enter-input" id="name-input"/>
+          <label class="modal-label" for="login-reg-input">Логин</label>
+          <input class="enter-input" id="login-reg-input"/>
+          <label class="modal-label" for="password-reg-input">Пароль</label>
+          <input class="enter-input" id="password-reg-input"/>
+          <input type="button" class="login-button" value="Зарегестрироваться" />
+          <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Окно входа -->
+      <div class="modal-container">
+        <div class="login modal" data-modal="2" id="modal-login-window">
+          <label class="modal-label" for="login-input">Логин</label>
+          <input class="enter-input" id="login-input"/>
+          <label class="modal-label" for="password-input">Пароль</label>
+          <input class="enter-input" id="password-input"/>
+          <input type="button" class="login-button" value="Войти" />
+          <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+            />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Окно истории поиска -->
+      <div class="modal-container">
+
+        <div class="wrapper modal" data-modal="3">
+          <section class="history">
+            <h2 class="section-title">История поиска</h2>
+            <div class="history-list">
+              <ul class="history-ul">
+                <li>
+                  <a class="history-link" href="#">Минск-Брюссель 2384Br 24.03.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Минск-Брюссель 2783Br 24.03.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Минск-Брюссель 2384Br 24.03.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Владивосток-Краснодар 3483Br 23.05.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Владивосток-Краснодар 3722Br 21.04.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Минск-Париж 2888Br 17.04.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Минск-Париж 2922Br 17.04.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Брюссель-Лиссабон 1483Br 24.04.2022</a>
+                </li>
+                <li>
+                  <a class="history-link" href="#">Брюссель-Лиссабон 1700Br 24.04.2022</a>
+                </li>
+              </ul>
+              <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+                />
+              </svg>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- Окно информации о месте прибытия -->
+      <div class="modal-container">
+
+        <div class="wrapper-detail modal" data-modal="4">
+          <h1>Брюссель</h1>
+          <img src="../Assets/Images/Brussel.jpg" alt="Вид города" class="detail-image" />
+          <p>
+            Брюссе́ль (нидерл. Brussel [ˈbrʏsəl], фр. Bruxelles [bʁyˈsɛl]) — столица Бельгии и
+            Брюссельского столичного региона. В Брюсселе разместились учреждения Французского и
+            Фламандского сообществ и Фландрии, штаб-квартира Евросоюза, офис НАТО, секретариат стран
+            Бенилюкса. Не следует путать город (коммуну) Брюссель (нидерл. Stad Brussel, фр. Ville de
+            Bruxelles, Bruxelles-ville) с Брюссельским столичным регионом.
+          </p>
+          <p>
+            Брюссе́ль (нидерл. Brussel [ˈbrʏsəl], фр. Bruxelles [bʁyˈsɛl]) — столица Бельгии и
+            Брюссельского столичного региона. В Брюсселе разместились учреждения Французского и
+            Фламандского сообществ и Фландрии, штаб-квартира Евросоюза, офис НАТО, секретариат стран
+            Бенилюкса. Не следует путать город (коммуну) Брюссель (нидерл. Stad Brussel, фр. Ville de
+            Bruxelles, Bruxelles-ville) с Брюссельским столичным регионом.
+          </p>
+  
+          <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <script src="./Scripts/modal_scripts.js"></script>
+    <script src="./Scripts/scripts.js"></script>
+  </body>
+</html>

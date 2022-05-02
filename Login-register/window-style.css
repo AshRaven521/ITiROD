@@ -1,0 +1,41 @@
+:root{
+    --font-family-style: 'Open Sans', sans-serif;
+    --text-color: #ebe9dc;
+    --secondary-color: #181f41;
+    --main-color: #607c9c;
+}
+
+h2{
+    font-family: var(--font-family-style);
+    margin: 0;
+}
+
+@font-face {
+    font-family: "Open Sans"; 
+    src: url("../Assets/Fonts/OpenSans-Regular.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--text-color);
+}
+
+body{
+    background-color: var(--main-color);
+}
+
+.login-button{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: none;
+    font-size: 16px;
+}
+
+
+.enter-input{
+    border: 2px solid var(--secondary-color);
+}
