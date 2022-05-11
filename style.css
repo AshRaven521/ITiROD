@@ -17,6 +17,14 @@
   font-weight: normal;
 }
 
+button{
+  cursor: pointer;
+}
+button:disabled{
+  background-color: #444;
+  cursor: default;
+}
+
 body {
   background-color: var(--main-color);
   color: var(--text-color);
@@ -194,13 +202,6 @@ span {
   flex-direction: column;
 }
 
-.city-code {
-  position: absolute;
-  right: 8px;
-  bottom: 3px;
-  font-size: 10px;
-  color: gray;
-}
 
 .input {
   border: 2px solid var(--secondary-color);
