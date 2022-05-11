@@ -14,12 +14,12 @@
           
           <span class="tech-support">Тех. поддержка: aviakolhoz@mail.com</span>
           <span class="tech-support"> +375447322813</span>
-          <a href="#" class="modal-button open-modal-button" data-modal="3"
-            >История поиска</a
-          >
+          <a href="#" class="modal-button open-modal-button" data-modal="3" id="desktop-history-button">История поиска</a>
           <div class="buttons">
-            <a href="#" class="modal-button open-modal-button" data-modal="1">Зарегестрироваться</a>
-            <a href="#" class="modal-button open-modal-button" data-modal="2">Войти</a>
+            <a href="#" class="modal-button open-modal-button" data-modal="1" id="desktop-reg-button">Зарегестрироваться</a>
+            <a href="#" class="modal-button open-modal-button" data-modal="2" id="desktop-login-button">Войти</a>
+            <a href="#" class="modal-button open-modal-button exit-button" id="desktop-exit-button">Выйти</a>
+            
           </div>
           <div class="menu-button">
             <span></span>
@@ -35,9 +35,10 @@
             <aside class="mobile-menu">
               <div class="buttons">
                 <hr class="mobile-hr" />
-                <a href="#" class="mobile-modal-button open-modal-button" data-modal="1">Зарегестрироваться</a>
-                <a href="#" class="mobile-modal-button open-modal-button" data-modal="2">Войти</a>
-                <a href="#" class="mobile-modal-button open-modal-button" data-modal="3">История поиска</a>
+                <a href="#" class="mobile-modal-button open-modal-button" data-modal="1" id="mobile-reg-button">Зарегестрироваться</a>
+                <a href="#" class="mobile-modal-button open-modal-button" data-modal="2" id="mobile-login-button">Войти</a>
+                <a href="#" class="mobile-modal-button open-modal-button exit-button" id="mobile-exit-button">Выйти</a>
+                <a href="#" class="mobile-modal-button open-modal-button" data-modal="3" id="mobile-history-button">История поиска</a>
                 
               </div>
               <hr class="mobile-hr" />
@@ -73,7 +74,8 @@
                   <label for="arrival-date">Дата прибытия: </label>
                   <input type="date" id="arrival-date" />
                 </div>
-                <input type="button" class="search-button" value="Поиск" />
+                <!-- <input type="button" class="search-button" value="Поиск" /> -->
+                <button type="button" class="search-button" id="ticket-search-button">Поиск</button>
               </form>
             </section>
             <section class="map-search">
@@ -184,13 +186,14 @@
 
         <div class="login modal" data-modal="1" id="modal-register-window">
           <label class="modal-label" for="name-input">Имя</label>
-          <input class="enter-input" id="name-input"/>
-          <label class="modal-label" for="login-reg-input">Логин</label>
-          <input class="enter-input" id="login-reg-input"/>
+          <input class="enter-input" id="name-input" required/>
+          <label class="modal-label" for="email-reg-input">E-mail</label>
+          <input type="email" class="enter-input" id="email-reg-input" required/>
           <label class="modal-label" for="password-reg-input">Пароль</label>
-          <input class="enter-input" id="password-reg-input"/>
-          <input type="button" class="login-button" value="Зарегестрироваться" />
-          <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <input class="enter-input" id="password-reg-input" required/>
+          <!-- <input type="button" class="login-button" value="Зарегестрироваться" id="register-button"/> -->
+          <button type="submit" class="login-button" id="register-button">Зарегестрироваться</button>
+          <svg class="close-button" data-modal="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
               d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
             />
@@ -201,12 +204,13 @@
       <!-- Окно входа -->
       <div class="modal-container">
         <div class="login modal" data-modal="2" id="modal-login-window">
-          <label class="modal-label" for="login-input">Логин</label>
-          <input class="enter-input" id="login-input"/>
+          <label class="modal-label" for="email-input">E-mail</label>
+          <input type="email" class="enter-input" id="email-input"/>
           <label class="modal-label" for="password-input">Пароль</label>
           <input class="enter-input" id="password-input"/>
-          <input type="button" class="login-button" value="Войти" />
-          <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <!-- <input type="button" class="login-button" value="Войти" /> -->
+          <button type="submit" class="login-button" id="login-button">Войти</button>
+          <svg class="close-button" data-modal="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
               d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
             />
