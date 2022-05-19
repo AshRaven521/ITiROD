@@ -1,8 +1,9 @@
-import {apiKey} from "./config.json"
+//api ключ к вашей базе в firebase
+const {apiKeySecret} = require("./config.json");
 
 export async function authWithEmailAndPassword(email, password) {
   const response = await fetch(
-    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKey}`,
+    `https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=${apiKeySecret}`,
     {
       method: "POST",
       body: JSON.stringify({
@@ -15,15 +16,16 @@ export async function authWithEmailAndPassword(email, password) {
       },
     }
   );
+  
   const { idToken, error } = await response.json();
-  if (error) throw new Error("Неправильный логин или пароль!");
+  if (error) throw new Error("Неправильный e-mail или пароль!");
   localStorage.setItem("token", idToken);
   return idToken;
 }
 
 export async function registerWithEmailAndPassword(name, email, password) {
   const response = await fetch(
-    `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKey}`,
+    `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${apiKeySecret}`,
     {
       method: "POST",
       body: JSON.stringify({
@@ -37,7 +39,7 @@ export async function registerWithEmailAndPassword(name, email, password) {
     }
   );
   const { idToken, error } = await response.json();
-  if(error) throw new Error("Введите пароль длинной более 6 символов!");
+  if(error) throw new Error(error.message);
   localStorage.setItem("token", idToken);
   return idToken;
 }
@@ -54,9 +56,21 @@ const mobileExitButton = document.getElementById("mobile-exit-button");
 const desktopHistoryButton = document.getElementById("desktop-history-button");
 const mobileHistoryButton = document.getElementById("mobile-history-button");
 
+const departurePlace = document.getElementById("departure-input");
+const departureDate = document.getElementById("departure-date");
+const arrivalPlace = document.getElementById("arrival-input");
+const arrivalDate = document.getElementById("arrival-date");
+const ticketsList = document.getElementById("list");
+
 function exit() {
   desktopExitButton.style.display = "none";
-  mobileExitButton.style.display = "none";
+  mobileExitButton.style.displaconst = "none";
+  departurePlace.value = "";
+  departureDate.value = "";
+  arrivalPlace.value = "";
+  arrivalDate.value = "";
+  ticketsList.innerHTML = "";
+
   localStorage.removeItem("token");
   document.dispatchEvent(new CustomEvent("auth", { detail: { isSignedIn: false } }));
 }
