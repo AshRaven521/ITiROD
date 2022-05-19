@@ -1,5 +1,5 @@
-import { getRandomNumber } from "./utils";
-import {apiKey} from "./config.json"
+//api ключ к вашей базе в firebase
+const {apiKeySecret} = require("./config.json");
 
 export class Ticket {
   static async create(ticket) {
@@ -10,28 +10,33 @@ export class Ticket {
         "Content-Type": "application/json",
       },
     });
-    const response_1 = await response.json();
-    console.log(response_1);
-    ticket.id = response_1.name;
+    const fullResponse = await response.json();
+    ticket.id = fullResponse.name;
     const ticket_1 = ticket;
-    const result_1 = await addToLocalStorage(ticket_1);
-    return Ticket.renderTicketsList(result_1);
+    addToLocalStorage(ticket_1);
+    return Ticket.renderTicketsList(ticket.price, ticket.departureTime, ticket.arrivalTime);
   }
 
-  static fetch(token) {
-    return fetch(`https://itirod-c3fae-default-rtdb.firebaseio.com/tickets.json?auth=${apiKey}`)
-      .then((response) => response.json())
-      .then((tickets) => {});
+  static async fetch(token) {
+    const response = await fetch(`https://itirod-c3fae-default-rtdb.firebaseio.com/tickets.json?auth=${token}`);
+    const tickets = await response.json();
+    if (tickets.error) {
+      return alert(tickets.error);
+    }
+    return tickets ? Object.keys(tickets).map(key => ({
+      ...tickets[key],
+      id: key
+    })) : [];
   }
 
-  static renderTicketsList() {
+  static renderTicketsList(ticketPrice, depTime, arrTime) {
     const tickets = getTicketsFromLocalStorage();
 
     const html = tickets.length
-      ? tickets.map(toCard).join("")
-      : `<div>Вы пока не искали билеты</div>`;
+      ? tickets.map(() => toCard(ticketPrice, depTime, arrTime)).slice(-1)
+      : alert("Вы пока не искали билетов");
 
-    const list = document.getElementsByClassName("tickets-list");
+    const list = document.getElementById("list");
     list.innerHTML = html;
   }
 }
@@ -41,21 +46,24 @@ const departureDate = document.getElementById("departure-date");
 const arrivalPlace = document.getElementById("arrival-input");
 const arrivalDate = document.getElementById("arrival-date");
 
-function toCard() {
+
+
+
+function toCard(price, departTime, arriveTime) {
   return `
       <li class="ticket">
       <div class="price">
         <span>Цена</span>
-        <span>${getRandomNumber(800, 3000)}Br</span>
+        <span>${price}Br</span>
       </div>
 
       <div class="line"></div>
 
       <div class="direction">
         <div class="departure">
-          <span>${departurePlace}</span>
-          <span>${getRandomNumber(0, 23)}:${getRandomNumber(0, 59)}</span>
-          <span>${departureDate}</span>
+          <span>${departurePlace.value}</span>
+          <span>${departTime}</span>
+          <span>${departureDate.value}</span>
         </div>
 
         <div class="departure-info-container">
@@ -63,21 +71,24 @@ function toCard() {
           <a
             href="#"
             class="departure-info-link open-modal-button"
-            data-modal="4">
+            data-modal="4"
+            id="info-link"
+            >
             Подробнее о месте прибытия
           </a>
           <a
             href="#"
             class="mobile-departure-info-link open-modal-button"
-            data-modal="4">
+            data-modal="4"
+            id="mobile-info-link">
             Подробнее
           </a>
         </div>
 
         <div class="arrival">
-          <span>${arrivalPlace}</span>
-          <span>${getRandomNumber(0, 23)}:${getRandomNumber(0, 59)}</span>
-          <span>${arrivalDate}</span>
+          <span>${arrivalPlace.value}</span>
+          <span>${arriveTime}</span>
+          <span>${arrivalDate.value}</span>
         </div>
       </div>
     </li>
