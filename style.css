@@ -76,6 +76,7 @@ header .container {
   justify-content: center;
   flex-wrap: wrap;
   flex-grow: 1;
+  min-height: calc(100vh - 65px);
 }
 
 .search-group {
