@@ -7,12 +7,31 @@ import "../Search_history/history_style.css";
 import "./modal_scripts.js";
 import "./scripts.js";
 import { isRegisterValid, isLoginValid } from "./utils.js";
-import { User } from "./user.js";
-import { authWithEmailAndPassword, registerWithEmailAndPassword } from "./auth";
 import { Ticket } from "./ticket";
+import {
+  getAuth,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { getRandomNumber, getRandomTime } from "./utils.js";
+import { initializeApp } from "firebase/app";
+//Для стилей кнопок Зарегестрироваться, Войти, Выйти
+import {} from "./auth";
 
-const regButton = document.getElementById("register-button");
-const loginButton = document.getElementById("login-button");
+//Взаимодействие с firebase
+const { apiKeySecret } = require("./config.json");
+const firebaseConfig = {
+  apiKey: apiKeySecret,
+  authDomain: "itirod-c3fae.firebaseapp.com",
+  projectId: "itirod-c3fae",
+  storageBucket: "itirod-c3fae.appspot.com",
+  messagingSenderId: "6643513081",
+  appId: "1:6643513081:web:8bb20868910f04354ed428",
+  measurementId: "G-DD2B8QQDBK",
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 const nameInput = document.getElementById("name-input");
 const emailRegInput = document.getElementById("email-reg-input");
@@ -21,10 +40,14 @@ const passwordRegInput = document.getElementById("password-reg-input");
 const emailInput = document.getElementById("email-input");
 const passwordInput = document.getElementById("password-input");
 
-const desktopHistoryButton = document.getElementById("desktop-history-button");
-const mobileHistoryButton = document.getElementById("mobile-history-button");
-
+const regButton = document.getElementById("register-button");
+const loginButton = document.getElementById("login-button");
 const searchTicketButton = document.getElementById("ticket-search-button");
+
+const departurePlace = document.getElementById("departure-input");
+const departureDate = document.getElementById("departure-date");
+const arrivalPlace = document.getElementById("arrival-input");
+const arrivalDate = document.getElementById("arrival-date");
 
 //Если при загрузке страницы инпуты заполнены, то кнопка включена, иначе выключена
 if (!isLoginValid(emailInput.value, passwordInput.value)) {
@@ -66,35 +89,13 @@ passwordRegInput.oninput = () => {
 };
 
 regButton.onclick = async () => {
-  // e.preventDefault();
-
-  // if (
-  //   isRegisterValid(nameInput.value) &&
-  //   isRegisterValid(emailRegInput.value) &&
-  //   isRegisterValid(passwordRegInput.value)
-  // ) {
-  // const user = {
-  //   name: nameInput.value.trim(),
-  //   login: emailRegInput.value.trim(),
-  //   password: passwordRegInput.value.trim(),
-  // };
-
-  // regButton.setAttribute("disabled", true);
-  // User.create(user).then(() => {
-  //   nameInput.value = "";
-  //   emailRegInput.value = "";
-  //   passwordRegInput.value = "";
-  //   regButton.removeAttribute("disabled");
-  // });
   try {
-    await registerWithEmailAndPassword(
-      nameInput.value,
-      emailRegInput.value,
-      passwordRegInput.value
-    );
+    createUserWithEmailAndPassword(auth, emailRegInput.value, passwordRegInput.value);
+
     const closeButton = document.querySelector(".close-button[data-modal='2']");
     closeButton.dispatchEvent(new Event("click"));
     document.dispatchEvent(new CustomEvent("auth", { detail: { isSignedIn: true } }));
+
     nameInput.value = "";
     emailRegInput.value = "";
     passwordRegInput.value = "";
@@ -102,7 +103,6 @@ regButton.onclick = async () => {
     alert(message);
   }
 };
-// };
 
 emailInput.oninput = () => {
   if (!isLoginValid(emailInput.value, passwordInput.value)) {
@@ -122,7 +122,15 @@ passwordInput.oninput = () => {
 
 loginButton.onclick = async () => {
   try {
-    await authWithEmailAndPassword(emailInput.value, passwordInput.value);
+    localStorage.removeItem("token");
+    await signInWithEmailAndPassword(auth, emailInput.value, passwordInput.value);
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const uid = user.uid;
+        localStorage.setItem("token", uid);
+      }
+    });
+
     const closeButton = document.querySelector(".close-button[data-modal='1']");
     closeButton.dispatchEvent(new Event("click"));
     document.dispatchEvent(new CustomEvent("auth", { detail: { isSignedIn: true } }));
@@ -133,12 +141,37 @@ loginButton.onclick = async () => {
   }
 };
 
-searchTicketButton.onclick = async () => {
-  try{
-    await Ticket.create()
-  }catch(e){
+searchTicketButton.onclick = async function () {
+  try {
+    const user = auth.currentUser;
+
+    if (user) {
+      const uid = user.uid;
+      const ticket = {
+        id: uid,
+        price: getRandomNumber(1000, 3000),
+        departureTime: getRandomTime(),
+        departurePlace: departurePlace.value.trim(),
+        departureDate: departureDate.value.trim(),
+        arrivalTime: getRandomTime(),
+        arrivalPlace: arrivalPlace.value.trim(),
+        arrivalDate: arrivalDate.value.trim(),
+      };
+      await Ticket.create(ticket);
+
+      const modalContainer = document.querySelector(".modal-container");
+      document.querySelector("#info-link").onclick = () => {
+        const modalElem = document.querySelector(`.modal[data-modal="4"]`);
+        modalElem.classList.add("active");
+        modalContainer.classList.add("active");
+      };
+      document.querySelector("#mobile-info-link").onclick = () => {
+        const modalElem = document.querySelector(`.modal[data-modal="4"]`);
+        modalElem.classList.add("active");
+        modalContainer.classList.add("active");
+      };
+    }
+  } catch (e) {
     alert(e);
   }
-}
-
-
+};
