@@ -11,15 +11,34 @@
       <header class="header">
         <div class="container">
           <img src="./Assets/Images/logo.png" alt="Logo" />
-          
+
           <span class="tech-support">Тех. поддержка: aviakolhoz@mail.com</span>
           <span class="tech-support"> +375447322813</span>
-          <a href="#" class="modal-button open-modal-button" data-modal="3" id="desktop-history-button">История поиска</a>
+          <a
+            href="#"
+            class="modal-button open-modal-button"
+            data-modal="3"
+            id="desktop-history-button"
+            >История поиска</a
+          >
           <div class="buttons">
-            <a href="#" class="modal-button open-modal-button" data-modal="1" id="desktop-reg-button">Зарегестрироваться</a>
-            <a href="#" class="modal-button open-modal-button" data-modal="2" id="desktop-login-button">Войти</a>
-            <a href="#" class="modal-button open-modal-button exit-button" id="desktop-exit-button">Выйти</a>
-            
+            <a
+              href="#"
+              class="modal-button open-modal-button"
+              data-modal="1"
+              id="desktop-reg-button"
+              >Зарегестрироваться</a
+            >
+            <a
+              href="#"
+              class="modal-button open-modal-button"
+              data-modal="2"
+              id="desktop-login-button"
+              >Войти</a
+            >
+            <a href="#" class="modal-button open-modal-button exit-button" id="desktop-exit-button"
+              >Выйти</a
+            >
           </div>
           <div class="menu-button">
             <span></span>
@@ -35,11 +54,33 @@
             <aside class="mobile-menu">
               <div class="buttons">
                 <hr class="mobile-hr" />
-                <a href="#" class="mobile-modal-button open-modal-button" data-modal="1" id="mobile-reg-button">Зарегестрироваться</a>
-                <a href="#" class="mobile-modal-button open-modal-button" data-modal="2" id="mobile-login-button">Войти</a>
-                <a href="#" class="mobile-modal-button open-modal-button exit-button" id="mobile-exit-button">Выйти</a>
-                <a href="#" class="mobile-modal-button open-modal-button" data-modal="3" id="mobile-history-button">История поиска</a>
-                
+                <a
+                  href="#"
+                  class="mobile-modal-button open-modal-button"
+                  data-modal="1"
+                  id="mobile-reg-button"
+                  >Зарегестрироваться</a
+                >
+                <a
+                  href="#"
+                  class="mobile-modal-button open-modal-button"
+                  data-modal="2"
+                  id="mobile-login-button"
+                  >Войти</a
+                >
+                <a
+                  href="#"
+                  class="mobile-modal-button open-modal-button exit-button"
+                  id="mobile-exit-button"
+                  >Выйти</a
+                >
+                <a
+                  href="#"
+                  class="mobile-modal-button open-modal-button"
+                  data-modal="3"
+                  id="mobile-history-button"
+                  >История поиска</a
+                >
               </div>
               <hr class="mobile-hr" />
               <div class="tech-support-info">
@@ -55,14 +96,14 @@
                 <div class="search-form__field">
                   <label for="departure-input">Место отправления:</label>
                   <div class="search-form__input">
-                    <input class="search-form__departure-input" id="departure-input"/>
+                    <input class="search-form__departure-input" id="departure-input" />
                     <span class="search-form__departure-code">Код</span>
                   </div>
                 </div>
                 <div class="search-form__field">
                   <label for="arrival-input">Место прибытия:</label>
                   <div class="search-form__input">
-                    <input class="search-form__arrival-input" id="arrival-input"/>
+                    <input class="search-form__arrival-input" id="arrival-input" />
                     <span class="search-form__arrival-code">Код</span>
                   </div>
                 </div>
@@ -74,7 +115,6 @@
                   <label for="arrival-date">Дата прибытия: </label>
                   <input type="date" id="arrival-date" />
                 </div>
-                <!-- <input type="button" class="search-button" value="Поиск" /> -->
                 <button type="button" class="search-button" id="ticket-search-button">Поиск</button>
               </form>
             </section>
@@ -95,82 +135,7 @@
           <hr class="search-hr" />
           <section class="search-result">
             <h2>Результаты поиска</h2>
-            <ul class="tickets-list">
-              <li class="ticket">
-                <div class="price">
-                  <span>Цена</span>
-                  <span>2384Br</span>
-                </div>
-
-                <div class="line"></div>
-
-                <div class="direction">
-                  <div class="departure">
-                    <span>Минск</span>
-                    <span>12:55</span>
-                    <span>24.03.2022</span>
-                  </div>
-
-                  <div class="departure-info-container">
-                    <span class="arrow-image"></span>
-                    <a
-                      href="#"
-                      class="departure-info-link open-modal-button"
-                      data-modal="4">
-                      Подробнее о месте прибытия
-                    </a>
-                    <a
-                      href="#"
-                      class="mobile-departure-info-link open-modal-button"
-                      data-modal="4">
-                      Подробнее
-                    </a>
-                  </div>
-
-                  <div class="arrival">
-                    <span>Брюссель</span>
-                    <span>10:30</span>
-                    <span>25.03.2022</span>
-                  </div>
-                </div>
-              </li>
-
-              <li class="ticket">
-                <div class="price">
-                  <span>Цена</span>
-                  <span>2783Br</span>
-                </div>
-
-                <div class="line"></div>
-
-                <div class="direction">
-                  <div class="departure">
-                    <span>Минск</span>
-                    <span>21:10</span>
-                    <span>24.03.2022</span>
-                  </div>
-                  <div class="departure-info-container">
-                    <span class="arrow-image"></span>
-                    <a
-                      href="#"
-                      class="departure-info-link open-modal-button"
-                      data-modal="4">
-                      Подробнее о месте прибытия</a>
-                    <a
-                      href="#"
-                      class="mobile-departure-info-link open-modal-button"
-                      data-modal="4">Подробнее</a
-                    >
-                  </div>
-
-                  <div class="arrival">
-                    <span>Брюссель</span>
-                    <span>13:20</span>
-                    <span>25.03.2022</span>
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <ul class="tickets-list" id="list"></ul>
           </section>
         </div>
       </main>
@@ -183,17 +148,22 @@
       <!-- Для модальных окон -->
       <!-- Окно регистрации -->
       <div class="modal-container">
-
         <div class="login modal" data-modal="1" id="modal-register-window">
           <label class="modal-label" for="name-input">Имя</label>
-          <input class="enter-input" id="name-input" required/>
+          <input class="enter-input" id="name-input" required />
           <label class="modal-label" for="email-reg-input">E-mail</label>
-          <input type="email" class="enter-input" id="email-reg-input" required/>
+          <input type="email" class="enter-input" id="email-reg-input" required />
           <label class="modal-label" for="password-reg-input">Пароль</label>
-          <input class="enter-input" id="password-reg-input" required/>
-          <!-- <input type="button" class="login-button" value="Зарегестрироваться" id="register-button"/> -->
-          <button type="submit" class="login-button" id="register-button">Зарегестрироваться</button>
-          <svg class="close-button" data-modal="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <input class="enter-input" id="password-reg-input" required />
+          <button type="submit" class="login-button" id="register-button">
+            Зарегестрироваться
+          </button>
+          <svg
+            class="close-button"
+            data-modal="1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
             <path
               d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
             />
@@ -205,12 +175,16 @@
       <div class="modal-container">
         <div class="login modal" data-modal="2" id="modal-login-window">
           <label class="modal-label" for="email-input">E-mail</label>
-          <input type="email" class="enter-input" id="email-input"/>
+          <input type="email" class="enter-input" id="email-input" />
           <label class="modal-label" for="password-input">Пароль</label>
-          <input class="enter-input" id="password-input"/>
-          <!-- <input type="button" class="login-button" value="Войти" /> -->
+          <input class="enter-input" id="password-input" />
           <button type="submit" class="login-button" id="login-button">Войти</button>
-          <svg class="close-button" data-modal="2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <svg
+            class="close-button"
+            data-modal="2"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
             <path
               d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
             />
@@ -220,40 +194,11 @@
 
       <!-- Окно истории поиска -->
       <div class="modal-container">
-
         <div class="wrapper modal" data-modal="3">
           <section class="history">
             <h2 class="section-title">История поиска</h2>
             <div class="history-list">
-              <ul class="history-ul">
-                <li>
-                  <a class="history-link" href="#">Минск-Брюссель 2384Br 24.03.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Минск-Брюссель 2783Br 24.03.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Минск-Брюссель 2384Br 24.03.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Владивосток-Краснодар 3483Br 23.05.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Владивосток-Краснодар 3722Br 21.04.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Минск-Париж 2888Br 17.04.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Минск-Париж 2922Br 17.04.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Брюссель-Лиссабон 1483Br 24.04.2022</a>
-                </li>
-                <li>
-                  <a class="history-link" href="#">Брюссель-Лиссабон 1700Br 24.04.2022</a>
-                </li>
-              </ul>
+              <ul class="history-ul" id="history-list"></ul>
               <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <path
                   d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
@@ -266,7 +211,6 @@
 
       <!-- Окно информации о месте прибытия -->
       <div class="modal-container">
-
         <div class="wrapper-detail modal" data-modal="4">
           <h1>Брюссель</h1>
           <img src="./Assets/Images/Brussel.jpg" alt="Вид города" class="detail-image" />
@@ -274,17 +218,17 @@
             Брюссе́ль (нидерл. Brussel [ˈbrʏsəl], фр. Bruxelles [bʁyˈsɛl]) — столица Бельгии и
             Брюссельского столичного региона. В Брюсселе разместились учреждения Французского и
             Фламандского сообществ и Фландрии, штаб-квартира Евросоюза, офис НАТО, секретариат стран
-            Бенилюкса. Не следует путать город (коммуну) Брюссель (нидерл. Stad Brussel, фр. Ville de
-            Bruxelles, Bruxelles-ville) с Брюссельским столичным регионом.
+            Бенилюкса. Не следует путать город (коммуну) Брюссель (нидерл. Stad Brussel, фр. Ville
+            de Bruxelles, Bruxelles-ville) с Брюссельским столичным регионом.
           </p>
           <p>
             Брюссе́ль (нидерл. Brussel [ˈbrʏsəl], фр. Bruxelles [bʁyˈsɛl]) — столица Бельгии и
             Брюссельского столичного региона. В Брюсселе разместились учреждения Французского и
             Фламандского сообществ и Фландрии, штаб-квартира Евросоюза, офис НАТО, секретариат стран
-            Бенилюкса. Не следует путать город (коммуну) Брюссель (нидерл. Stad Brussel, фр. Ville de
-            Bruxelles, Bruxelles-ville) с Брюссельским столичным регионом.
+            Бенилюкса. Не следует путать город (коммуну) Брюссель (нидерл. Stad Brussel, фр. Ville
+            de Bruxelles, Bruxelles-ville) с Брюссельским столичным регионом.
           </p>
-  
+
           <svg class="close-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path
               d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z"
