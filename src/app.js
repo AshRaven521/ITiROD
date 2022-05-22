@@ -7,7 +7,7 @@ import "../Search_history/history_style.css";
 import "./modal_scripts.js";
 import "./scripts.js";
 import { isRegisterValid, isLoginValid } from "./utils.js";
-import { Ticket } from "./ticket";
+import { Ticket } from "./ticket.js";
 import {
   getAuth,
   onAuthStateChanged,
@@ -17,7 +17,8 @@ import {
 import { getRandomNumber, getRandomTime } from "./utils.js";
 import { initializeApp } from "firebase/app";
 //Для стилей кнопок Зарегестрироваться, Войти, Выйти
-import {} from "./auth";
+import {} from "./auth.js";
+
 
 //Взаимодействие с firebase
 const { apiKeySecret } = require("./config.json");
@@ -48,6 +49,7 @@ const departurePlace = document.getElementById("departure-input");
 const departureDate = document.getElementById("departure-date");
 const arrivalPlace = document.getElementById("arrival-input");
 const arrivalDate = document.getElementById("arrival-date");
+
 
 //Если при загрузке страницы инпуты заполнены, то кнопка включена, иначе выключена
 if (!isLoginValid(emailInput.value, passwordInput.value)) {
@@ -90,7 +92,7 @@ passwordRegInput.oninput = () => {
 
 regButton.onclick = async () => {
   try {
-    createUserWithEmailAndPassword(auth, emailRegInput.value, passwordRegInput.value);
+    await createUserWithEmailAndPassword(auth, emailRegInput.value, passwordRegInput.value);
 
     const closeButton = document.querySelector(".close-button[data-modal='2']");
     closeButton.dispatchEvent(new Event("click"));
@@ -175,3 +177,4 @@ searchTicketButton.onclick = async function () {
     alert(e);
   }
 };
+
