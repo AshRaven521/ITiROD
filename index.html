@@ -10,14 +10,13 @@
     <div class="wrapper-main">
       <header class="header">
         <div class="container">
-          <img src="./Assets/Images/logo.png" alt="Logo" />
+          <a href="./"><img src="./Assets/Images/logo.png" alt="Logo" /></a>
 
           <span class="tech-support">Тех. поддержка: aviakolhoz@mail.com</span>
           <span class="tech-support"> +375447322813</span>
           <a
             href="#"
             class="modal-button open-modal-button"
-            data-modal="3"
             id="desktop-history-button"
             >История поиска</a
           >
@@ -47,98 +46,10 @@
           </div>
         </div>
       </header>
+      <div id="root">
 
-      <main class="main">
-        <div class="container">
-          <div class="mobile-menu-container">
-            <aside class="mobile-menu">
-              <div class="buttons">
-                <hr class="mobile-hr" />
-                <a
-                  href="#"
-                  class="mobile-modal-button open-modal-button"
-                  data-modal="1"
-                  id="mobile-reg-button"
-                  >Зарегестрироваться</a
-                >
-                <a
-                  href="#"
-                  class="mobile-modal-button open-modal-button"
-                  data-modal="2"
-                  id="mobile-login-button"
-                  >Войти</a
-                >
-                <a
-                  href="#"
-                  class="mobile-modal-button open-modal-button exit-button"
-                  id="mobile-exit-button"
-                  >Выйти</a
-                >
-                <a
-                  href="#"
-                  class="mobile-modal-button open-modal-button"
-                  data-modal="3"
-                  id="mobile-history-button"
-                  >История поиска</a
-                >
-              </div>
-              <hr class="mobile-hr" />
-              <div class="tech-support-info">
-                <span class="mobile-tech-support">Тех. поддержка: aviakolhoz@mail.com</span>
-                <span class="mobile-tech-support"> +375447322813</span>
-              </div>
-            </aside>
-          </div>
-          <div class="search-group">
-            <section class="search">
-              <h2>Поиск</h2>
-              <form class="search-form">
-                <div class="search-form__field">
-                  <label for="departure-input">Место отправления:</label>
-                  <div class="search-form__input">
-                    <input class="search-form__departure-input" id="departure-input" />
-                    <span class="search-form__departure-code">Код</span>
-                  </div>
-                </div>
-                <div class="search-form__field">
-                  <label for="arrival-input">Место прибытия:</label>
-                  <div class="search-form__input">
-                    <input class="search-form__arrival-input" id="arrival-input" />
-                    <span class="search-form__arrival-code">Код</span>
-                  </div>
-                </div>
-                <div class="search-form__field">
-                  <label for="departure-date">Дата отправления:</label>
-                  <input type="date" id="departure-date" />
-                </div>
-                <div class="search-form__field">
-                  <label for="arrival-date">Дата прибытия: </label>
-                  <input type="date" id="arrival-date" />
-                </div>
-                <button type="button" class="search-button" id="ticket-search-button">Поиск</button>
-              </form>
-            </section>
-            <section class="map-search">
-              <h2>Карта поиска</h2>
-              <div class="map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2350.0892940111835!2d27.592458115628546!3d53.91238913986242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbcfaf1d38974b%3A0x3d097c7a85e0db13!2z0JHQk9Cj0JjQoCwg0LrQvtGA0L_Rg9GBIOKEliA0!5e0!3m2!1sru!2sby!4v1647969009837!5m2!1sru!2sby"
-                  width="100%"
-                  height="400"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                ></iframe>
-              </div>
-            </section>
-          </div>
-          <hr class="search-hr" />
-          <section class="search-result">
-            <h2>Результаты поиска</h2>
-            <ul class="tickets-list" id="list"></ul>
-          </section>
-        </div>
-      </main>
+      </div>
+      
       <footer class="footer">
         <span>© 2022</span>
         <a class="link" href="https://github.com/AshRaven521/ITiROD">GitHub</a>
@@ -154,7 +65,7 @@
           <label class="modal-label" for="email-reg-input">E-mail</label>
           <input type="email" class="enter-input" id="email-reg-input" required />
           <label class="modal-label" for="password-reg-input">Пароль</label>
-          <input class="enter-input" id="password-reg-input" required />
+          <input type="password" class="enter-input" id="password-reg-input" required />
           <button type="submit" class="login-button" id="register-button">
             Зарегестрироваться
           </button>
@@ -177,7 +88,7 @@
           <label class="modal-label" for="email-input">E-mail</label>
           <input type="email" class="enter-input" id="email-input" />
           <label class="modal-label" for="password-input">Пароль</label>
-          <input class="enter-input" id="password-input" />
+          <input type="password" class="enter-input" id="password-input" />
           <button type="submit" class="login-button" id="login-button">Войти</button>
           <svg
             class="close-button"
@@ -193,7 +104,7 @@
       </div>
 
       <!-- Окно истории поиска -->
-      <div class="modal-container">
+      <!-- <div class="modal-container">
         <div class="wrapper modal" data-modal="3">
           <section class="history">
             <h2 class="section-title">История поиска</h2>
@@ -207,10 +118,10 @@
             </div>
           </section>
         </div>
-      </div>
+      </div> -->
 
       <!-- Окно информации о месте прибытия -->
-      <div class="modal-container">
+      <!-- <div class="modal-container">
         <div class="wrapper-detail modal" data-modal="4">
           <h1>Брюссель</h1>
           <img src="./Assets/Images/Brussel.jpg" alt="Вид города" class="detail-image" />
@@ -235,7 +146,7 @@
             />
           </svg>
         </div>
-      </div>
+      </div> -->
     </div>
   </body>
 </html>
