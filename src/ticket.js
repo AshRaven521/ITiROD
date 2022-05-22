@@ -14,7 +14,7 @@ export class Ticket {
     ticket.id = fullResponse.name;
     const ticket_1 = ticket;
     addToLocalStorage(ticket_1);
-    return Ticket.renderTicketsList(ticket.price, ticket.departureTime, ticket.arrivalTime);
+    return Ticket.renderTicketsList(ticket_1.price, ticket_1.departureTime, ticket_1.arrivalTime);
   }
 
   static async fetch(token) {
@@ -46,9 +46,6 @@ const departureDate = document.getElementById("departure-date");
 const arrivalPlace = document.getElementById("arrival-input");
 const arrivalDate = document.getElementById("arrival-date");
 
-
-
-
 function toCard(price, departTime, arriveTime) {
   return `
       <li class="ticket">
@@ -69,7 +66,7 @@ function toCard(price, departTime, arriveTime) {
         <div class="departure-info-container">
           <span class="arrow-image"></span>
           <a
-            href="#"
+            href="https://ru.wikipedia.org/wiki/${arrivalPlace.value}" target="_blank"
             class="departure-info-link open-modal-button"
             data-modal="4"
             id="info-link"
