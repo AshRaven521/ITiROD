@@ -99,8 +99,12 @@ const home = `<main class="main">
 </main>`;
 const contact = '<h1>I am contact Page</h1>';
 const about = `
-        <h2>История поиска</h2>
-        <ul id="history-list"></ul>
+        <div class="history">
+          <h2>История поиска</h2>
+          <ul class="history-ul" id="history-list">
+            <li class="loading" id="loading">Загрузка...</li>
+          </ul>
+        </div>
         `;
 const routes = {
   '/' : home,
@@ -157,6 +161,7 @@ desktopHistory.onclick = async function () {
      
     if (user) {      
       historyList = document.getElementById("history-list");
+      const loadingLi = document.getElementById("loading");
           const uid = user.uid;
           const db = getDatabase();
           const star = ref(db, "tickets");
@@ -164,15 +169,18 @@ desktopHistory.onclick = async function () {
             snapshot.forEach((childSnap) => {
               const childData = childSnap.val();
               if (childData.id === uid) {
+                
                 const ticketHistoryHTML = `
                   <li>
-                  <a href="./">${childData.departurePlace}-${childData.arrivalPlace} ${childData.price}Br ${childData.departureDate}</a>
+                  <a class = "history-link" href="./">${childData.departurePlace}-${childData.arrivalPlace} ${childData.price}Br ${childData.departureDate}</a>
                   </li>
                   `;
+                  loadingLi.remove();
                 historyList.innerHTML += ticketHistoryHTML;
               }
             });
           });
+          
     }    
   }
   catch (e) {
